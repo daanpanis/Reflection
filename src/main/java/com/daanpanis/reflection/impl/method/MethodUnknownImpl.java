@@ -10,8 +10,4 @@ public class MethodUnknownImpl extends MethodImpl implements MethodUnknown {
         super(instance, method);
     }
 
-    @Override
-    public Object invoke(Object... parameters) {
-        return super.invoke(parameters);
-    }
 }

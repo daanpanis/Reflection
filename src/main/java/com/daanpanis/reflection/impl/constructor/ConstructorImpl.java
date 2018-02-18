@@ -2,6 +2,7 @@ package com.daanpanis.reflection.impl.constructor;
 
 import com.daanpanis.reflection.ReflectionInstance;
 import com.daanpanis.reflection.constructor.Constructor;
+import com.daanpanis.reflection.exceptions.ReflectionRuntimeException;
 import com.daanpanis.reflection.impl.ReflectionInstanceImpl;
 
 import java.lang.reflect.InvocationTargetException;
@@ -20,7 +21,7 @@ public class ConstructorImpl<T> implements Constructor<T> {
         try {
             return new ReflectionInstanceImpl<>(original.newInstance(parameters));
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+            throw new ReflectionRuntimeException(e);
         }
     }
 

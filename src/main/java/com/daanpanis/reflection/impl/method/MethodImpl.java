@@ -1,5 +1,6 @@
 package com.daanpanis.reflection.impl.method;
 
+import com.daanpanis.reflection.exceptions.ReflectionRuntimeException;
 import com.daanpanis.reflection.method.Method;
 
 import java.lang.reflect.InvocationTargetException;
@@ -20,7 +21,7 @@ public class MethodImpl implements Method {
         try {
             return method.invoke(instance, parameters);
         } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+            throw new ReflectionRuntimeException(e);
         }
     }
 
